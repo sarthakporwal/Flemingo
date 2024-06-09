@@ -1,3 +1,5 @@
+import 'package:flemingo/Pages/login_page.dart';
+import 'package:flemingo/Pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Scaffold(),
+      initialRoute: 'login',
+      routes: {
+        'register': (context) => RegisterPage(),
+        'login': (context) => LoginPage(),
+      },
     );
   }
 }
