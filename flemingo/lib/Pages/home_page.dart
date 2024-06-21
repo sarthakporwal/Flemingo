@@ -1,6 +1,6 @@
 import 'dart:io';
 
-// import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart';
 // import 'package:finstagram/pages/feed_page.dart';
 // import 'package:finstagram/pages/profile_page.dart';
 // import 'package:finstagram/services/firebase_service.dart';
@@ -89,9 +89,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _postImage() async {
-    // FilePickerResult? _result =
-    //     await FilePicker.platform.pickFiles(type: FileType.image);
-    // File _image = File(_result!.files.first.path!);
+    FilePickerResult? _result =
+        await FilePicker.platform.pickFiles(type: FileType.image);
+    File _image = File(_result!.files.first.path!);
     // await _firebaseService!.postImage(_image);
   }
 }

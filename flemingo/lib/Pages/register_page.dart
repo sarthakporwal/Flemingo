@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -76,12 +77,25 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _profileImageWidget() {
-    return Container(
-      height: _deviceHeight! * 0.15,
-      width: _deviceHeight! * 0.15,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage("https://i.pravatar.cc/300"),
+    var _imageProvider = _image != null
+        ? FileImage(_image!)
+        : const NetworkImage("https://i.pravatar.cc/300");
+    return GestureDetector(
+      onTap: () {
+        FilePicker.platform.pickFiles(type: FileType.image).then((_result) {
+          setState(() {
+            _image = File(_result!.files.first.path!);
+          });
+        });
+      },
+      child: Container(
+        height: _deviceHeight! * 0.15,
+        width: _deviceHeight! * 0.15,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: _imageProvider as ImageProvider,
+          ),
         ),
       ),
     );
