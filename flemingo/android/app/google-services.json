@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207286063076",
+    "project_id": "flemingo-fd9a2",
+    "storage_bucket": "flemingo-fd9a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207286063076:android:bc36b6537dfd48cd6b81f1",
+        "android_client_info": {
+          "package_name": "com.example.flemingo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQO9fcmo2Oz8IQDmAf7X2AGcgaWdSpCWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
